@@ -77,20 +77,6 @@ function soloLetras(e) {
 					Registro de usuarios
 				</span>
 				<form class="login100-form validate-form p-b-33 p-t-5">
-					<div class="wrap-input100 validate-input" data-validate = "Ingrese su cedula">
-						<input class="input100" type="text" id="cedula" minlength="10" maxlength="10" onkeyup="return numeros(this)" name="cedula" placeholder="Cedula de usuario" required>
-						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate = "Ingrese su nombre">
-						<input class="input100" type="text" name="nombre" onkeypress="return soloLetras(event)" placeholder="Nombre de usuario" required>
-						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate="Ingrese sus apellidos">
-						<input class="input100" type="text" onkeypress="return soloLetras(event)" name="apellido" placeholder="Apellido del usuario" required>
-						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
-					</div>
 					
 					<div class="wrap-input100 validate-input" data-validate="Ingrese su correo">
 						<input class="input100" type="email" name="correo" placeholder="Correo del usuario" required>
