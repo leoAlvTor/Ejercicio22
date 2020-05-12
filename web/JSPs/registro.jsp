@@ -9,7 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="/Proyectov6/img/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="/Ejercicio22/img/icons/favicon.ico"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -27,9 +27,9 @@
 <!--===============================================================================================-->	
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/Proyectov6/css/util.css">
-	<link rel="stylesheet" type="text/css" href="/Proyectov6/css/main.css">
-																			<link rel="stylesheet" type="text/css" href="/Proyectov6/css/usuario/menu.css">
+	<link rel="stylesheet" type="text/css" href="/Ejercicio22/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/Ejercicio22/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/Proyectov6/css/usuario/menu.css">
 	
 	<script>
 	function numeros(){
