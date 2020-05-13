@@ -54,8 +54,15 @@ public abstract class Libro {
                 ", precio=" + precio +
                 '}';
     }
+    
+    
 
-    public abstract double calcularPrecioImpreso();
-	public abstract double calcularPrecioDigital(double comision);
+    public abstract double calcularPrecioFijo();
+	public abstract double calcularPrecioEnvio();
+	
+	public double calcularPrecioFinal() {
+		
+		return calcularPrecioFijo()+calcularPrecioEnvio();
+	};
 
 }
