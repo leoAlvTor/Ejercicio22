@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "ServletIniciarSesion")
+@WebServlet("/ServletIniciarSesion")
 public class ServletIniciarSesion extends HttpServlet {
     private HttpServletRequest request;
     private HttpServletResponse response;
@@ -19,28 +19,36 @@ public class ServletIniciarSesion extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.request = request;
         this.response = response;
-        iniciarSesion();
-    }
-
-    private void iniciarSesion() throws IOException {
-        Cliente cliente = new Cliente(0, "example1@example.com", "pass", null, null);
-        Cliente cliente1 = new Cliente(1, "example2@example.com", "pass", null, null);
-
-        switch (String.valueOf(request.getAttribute("usuario"))){
-            case "example1@example.com":
-                redirectMain(cliente);
-                break;
-            case "example2@example.com":
-                redirectMain(cliente1);
-                break;
+        HttpSession session = request.getSession(false);
+        System.out.println(session);
+        if(session == null){
+            response.sendRedirect(request.getContextPath()+"/JSPs/registro.jsp");
+        }else {
+            iniciarSesion(session);
         }
     }
 
+    private void iniciarSesion(HttpSession session) throws IOException {
+        String correo = request.getParameter("usuario");
+        String password = request.getParameter("password");
 
-    private void redirectMain(Cliente cliente) throws IOException {
-        cliente.setCredito(new Credito(100,0));
-        HttpSession session = request.getSession(true);
-        session.setAttribute("client", cliente);
+        Cliente cliente = (Cliente) session.getAttribute("cliente");
+        if(cliente != null){
+            System.out.println(cliente.toString());
+            System.out.println(correo + "\t" + password);
+            if(cliente.getCorreo().equals(correo) && password.equals(password))
+                redirectMain(cliente, session);
+            else
+                response.sendRedirect(request.getContextPath()+"/JSPs/registro.jsp");
+        }else{
+            response.sendRedirect(request.getContextPath()+"/JSPs/registro.jsp");
+        }
+
+    }
+
+    private void redirectMain(Cliente cliente, HttpSession session) throws IOException {
+       // session.setAttribute("client", cliente);
+        System.out.println("HOLA!");
         response.sendRedirect("/PaginaPricipal.jsp"); // <------------------------- CAMBIAR EL NOMBRE DE ESTA PAGINA
 
     }
