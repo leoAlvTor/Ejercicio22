@@ -3,7 +3,7 @@ package modelo;
 public class Digital extends Libro{
 
     public double calcularPrecioFinal(double costoComision){
-        return this.getPrecio()+costoComision;
+        return 0;
     }
 
     @Override
