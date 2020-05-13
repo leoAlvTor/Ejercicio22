@@ -2,12 +2,17 @@ package modelo;
 
 public class Digital extends Libro{
 
-    public double calcularPrecioFinal(double costoComision){
-        return 0;
-    }
+	@Override
+	public double calcularPrecioImpreso() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
-    @Override
-    public double calcularPrecioFinal() {
-        return 2;
-    }
+	@Override
+	public double calcularPrecioDigital(double comision) {
+		// TODO Auto-generated method stub
+		return getPrecio()+comision;
+	}
+
+
 }

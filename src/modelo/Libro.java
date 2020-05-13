@@ -55,6 +55,7 @@ public abstract class Libro {
                 '}';
     }
 
-    public abstract double calcularPrecioFinal();
+    public abstract double calcularPrecioImpreso();
+	public abstract double calcularPrecioDigital(double comision);
 
 }
