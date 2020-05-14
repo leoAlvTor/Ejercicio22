@@ -44,7 +44,7 @@
 	</nav>
 </header>
 
-<form action="/Proyectov6/SesionController" method="get" id="registro">
+<form action="/Ejercicio22/ServletIniciarSesion" method="post" id="registro">
 <div class="limiter">
 		<div class="container-login100" style="background-image: url('/Proyectov6/img/bg-01.jpg');">
 			<div class="wrap-login100 p-t-30 p-b-50">
@@ -54,12 +54,12 @@
 				<form class="login100-form validate-form p-b-33 p-t-5">
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="email" name="correo" placeholder="Correo del usuario" required>
+						<input class="input100" type="email" name="usuario" placeholder="Correo del usuario" required>
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="contrasena" placeholder="Contrasena" minlength="8" required>
+						<input class="input100" type="password" name="password" placeholder="Contrasena" minlength="8" required>
 						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 					</div>
 

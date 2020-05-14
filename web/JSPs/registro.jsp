@@ -69,7 +69,7 @@ function soloLetras(e) {
 	</nav>
 </header>
 <br><br>
-<form action="/Proyectov6/RegistroController" method="post" id="registro">
+<form action="/Ejercicio22/ServletRegistro" method="post" id="registro">
 <div class="limiter">
 		<div class="container-login100" style="background-image: url('/Proyectov6/img/bg-01.jpg');">
 			<div class="wrap-login100 p-t-30 p-b-50">
@@ -83,7 +83,7 @@ function soloLetras(e) {
 						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate="Ingrese su contrasena">
-						<input class="input100" type="password" name="contrasena" minlength="8" placeholder="Elija su contrasena" required>
+						<input class="input100" type="password" name="password" minlength="8" placeholder="Elija su contrasena" required>
 						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 					</div>
 			

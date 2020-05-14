@@ -11,7 +11,6 @@
 <link href="/Ejercicio22/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body id="top">
-	<c:set var="p1" scope="session" value="${cliente}" />
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -27,7 +26,7 @@
       <nav id="mainav" class="fl_right">
         <ul class="clear">
           <li class="active"><a href="index.html">Home</a></li>
-          <li><a class="drop" href="#">${p1.correo}</a>
+          <li><a class="drop" href="#">Pages</a>
             <ul>
               <li><a href="pages/gallery.html">Gallery</a></li>
               <li><a href="pages/full-width.html">Full Width</a></li>
@@ -36,7 +35,7 @@
               <li><a href="pages/basic-grid.html">Basic Grid</a></li>
             </ul>
           </li>
-          <li><a class="drop" href="#">Recarga</a>
+          <li><a class="drop" href="#">Dropdown</a>
             <ul>
               <li><a href="#">Level 2</a></li>
               <li><a class="drop" href="#">Level 2 + Drop</a>
@@ -49,8 +48,8 @@
               <li><a href="#">Level 2</a></li>
             </ul>
           </li>
-          <li><a href="#">Compras</a></li>
-          <li><a href="#">LogOut</a></li>
+          <li><a href="#">Link Text</a></li>
+          <li><a href="#">Link Text</a></li>
         </ul>
       </nav>
       <!-- ################################################################################################ -->
@@ -127,89 +126,22 @@
     <!-- main body -->
     <!-- ################################################################################################ -->
     <article class="group btmspace-80">
-      <div class="two_third first"><img class="borderedbox inspace-10" src="/Ejercicio22/images/demo/660x360.png" alt=""></div>
+      <div class="two_third first"><img class="borderedbox inspace-10" src="/Ejercicio22/images/libros/${libro.titulo}.jpg" alt="no hay"></div>
       <div class="one_third">
-        <h6 class="heading">Per inceptos himenaeos donec lacinia mollis vel</h6>
+        <h6 class="heading"> ${libro.titulo}</h6>
         <ul class="nospace meta">
           <li><i class="fa fa-user"></i> <a href="#">Admin</a></li>
           <li><i class="fa fa-tag"></i> <a href="#">Tag Name</a></li>
         </ul>
-        <p>Aliquam mauris morbi tristique orci sit amet sapien tincidunt ut rutrum dui tincidunt.</p>
+        <p> Autor: ${libro.autor} <br>Edicion: ${libro.edicion} <br> Precio neto: ${libro.precio} </p>
         <p class="btmspace-30">Cras eget lacinia magna nunc ut est est cras aliquam erat sem at dapibus lorem luctus sed nunc sagittis leo in&hellip;</p>
-        <footer class="nospace"><a class="btn" href="#">COMPRAR &raquo;</a></footer>
+        <footer class="nospace"><a class="btn" href="/Ejercicio22/ServletRegistrarCompra?titulo=${libro.titulo}&autor=${libro.autor}&edicion=${libro.edicion}&precio=${libro.precio}&tipo=impreso">IMPRESO &raquo;</a>&nbsp&nbsp<a class="btn" href="/Ejercicio22/ServletRegistrarCompra?titulo=${libro.titulo}&autor=${libro.autor}&edicion=${libro.edicion}&precio=${libro.precio}&tipo=digital">DIGITAL &raquo;</a></footer>
       </div>
     </article>
     <!-- ################################################################################################ -->
     <hr class="btmspace-80">
     <!-- ################################################################################################ -->
-    <ul class="nospace group overview">
-      <li class="one_third">
-        <article><a href="#"><img src="/Ejercicio22/images/libros/El Senor de los Anillos.jpg" alt="no hay"></a>
-          <h6 class="heading">${l1.titulo} </h6>
-          <ul class="nospace meta">
-            <li><i class="fa fa-user"></i> <a href="#">Admin</a></li>
-            <li><i class="fa fa-tag"></i> <a href="#">Tag Name</a></li>
-          </ul>
-          <p> ${l1.autor} <br> ${l1.edicion} <br> ${l1.precio}</p>
-          <footer class="nospace"><a class="btn" href="/Ejercicio22/ServletVenta?titulo=${l1.titulo}&autor=${l1.autor}&edicion=${l1.edicion}&precio=${l1.precio}">COMPRAR &raquo;</a></footer>
-        </article>
-      </li>
-      <li class="one_third">
-        <article><a href="#"><img src="/Ejercicio22/images/libros/El Codigo da Vinci.jpg" alt=""></a>
-          <h6 class="heading">${l2.titulo} </h6>
-          <ul class="nospace meta">
-            <li><i class="fa fa-user"></i> <a href="#">Admin</a></li>
-            <li><i class="fa fa-tag"></i> <a href="#">Tag Name</a></li>
-          </ul>
-          <p>${l2.autor} <br> ${l2.edicion} <br> ${l2.precio}</p>
-          <footer class="nospace"><a class="btn" href="/Ejercicio22/ServletVenta?titulo=${l2.titulo}&autor=${l2.autor}&edicion=${l2.edicion}&precio=${l2.precio}">COMPRAR &raquo;</a></footer>
-        </article>
-      </li>
-      <li class="one_third">
-        <article><a href="#"><img src="/Ejercicio22/images/libros/El Alquimista.jpg" alt=""></a>
-          <h6 class="heading">${l3.titulo} </h6>
-          <ul class="nospace meta">
-            <li><i class="fa fa-user"></i> <a href="#">Admin</a></li>
-            <li><i class="fa fa-tag"></i> <a href="#">Tag Name</a></li>
-          </ul>
-          <p><a href="">${l3.autor} <br> ${l3.edicion} <br> ${l3.precio}</a></p>
-          <footer class="nospace"><a class="btn" href="/Ejercicio22/ServletVenta?titulo=${l3.titulo}&autor=${l3.autor}&edicion=${l3.edicion}&precio=${l3.precio}">COMPRAR &raquo;</a></footer>
-        </article>
-      </li>
-      <li class="one_third">
-        <article><a href="#"><img src="/Ejercicio22/images/demo/320x240.png" alt=""></a>
-          <h6 class="heading">${l4.titulo} </h6>
-          <ul class="nospace meta">
-            <li><i class="fa fa-user"></i> <a href="#">Admin</a></li>
-            <li><i class="fa fa-tag"></i> <a href="#">Tag Name</a></li>
-          </ul>
-          <p>${l4.autor} <br> ${l4.edicion} <br> ${l4.precio}</p>
-          <footer class="nospace"><a class="btn" href="/Ejercicio22/ServletVenta?titulo=${l4.titulo}&autor=${l4.autor}&edicion=${l4.edicion}&precio=${l4.precio}">COMPRAR &raquo;</a></footer>
-        </article>
-      </li>
-      <li class="one_third">
-        <article><a href="#"><img src="/Ejercicio22/images/demo/320x240.png" alt=""></a>
-          <h6 class="heading">${l5.titulo} </h6>
-          <ul class="nospace meta">
-            <li><i class="fa fa-user"></i> <a href="#">Admin</a></li>
-            <li><i class="fa fa-tag"></i> <a href="#">Tag Name</a></li>
-          </ul>
-          <p>${l5.autor} <br> ${l5.edicion} <br> ${l5.precio}</p>
-          <footer class="nospace"><a class="btn" href="/Ejercicio22/ServletVenta?titulo=${l5.titulo}&autor=${l5.autor}&edicion=${l5.edicion}&precio=${l5.precio}">COMPRAR &raquo;</a></footer>
-        </article>
-      </li>
-      <li class="one_third">
-        <article><a href="#"><img src="/Ejercicio22/images/demo/320x240.png" alt=""></a>
-          <h6 class="heading">${l6.titulo} </h6>
-          <ul class="nospace meta">
-            <li><i class="fa fa-user"></i> <a href="#">Admin</a></li>
-            <li><i class="fa fa-tag"></i> <a href="#">Tag Name</a></li>
-          </ul>
-          <p>${l6.autor} <br> ${l6.edicion} <br> ${l6.precio}</p>
-          <footer class="nospace"><a class="btn" href="/Ejercicio22/ServletVenta?titulo=${l6.titulo}&autor=${l6.autor}&edicion=${l6.edicion}&precio=${l6.precio}">COMPRAR &raquo;</a></footer>
-        </article>
-      </li>
-    </ul>
+
     <!-- ################################################################################################ -->
     <!-- / main body -->
     <div class="clear"></div>
