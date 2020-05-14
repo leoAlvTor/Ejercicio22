@@ -4,8 +4,19 @@ import java.util.List;
 
 public class Compra {
     private List<Libro> libroList;
+    private double total;
+    
+    
 
-    public List<Libro> getLibroList() {
+    public double getTotal() {
+		return total;
+	}
+
+	public void setTotal(double total) {
+		this.total = total;
+	}
+
+	public List<Libro> getLibroList() {
         return libroList;
     }
 
@@ -18,5 +29,14 @@ public class Compra {
         return "Compra{" +
                 "libroList=" + libroList +
                 '}';
+    }
+    
+    public double totalCompra() {
+    	
+    	 
+    	for (Libro libro : libroList) {
+			total+=libro.calcularPrecioFinal();
+		}
+    	return total;
     }
 }
