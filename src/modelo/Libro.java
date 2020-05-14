@@ -1,60 +1,68 @@
 package modelo;
 
 public abstract class Libro {
-    private String titulo, autor, edicion;
-    private double precio;
-
-    public Libro() {}
-
-    public Libro(String titulo, String autor, String edicion, double precio) {
+	
+	private String titulo, autor, edicion;
+    private double precio,preciofinal;
+    
+	public Libro(String titulo, String autor, String edicion, double precio) {
         this.titulo = titulo;
         this.autor = autor;
         this.edicion = edicion;
         this.precio = precio;
     }
+	
+	public double calcularPrecio() {
+		preciofinal= precio+(precio*calcularComision())+calcularEnvio();
+		System.out.println("precio del libro"+ precio);
+		return preciofinal;
+		
+	}
+	
+	public abstract double calcularComision();
+	
+	public abstract double calcularEnvio();
 
-    public String getTitulo() {
-        return titulo;
-    }
+	public String getTitulo() {
+		return titulo;
+	}
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
 
-    public String getAutor() {
-        return autor;
-    }
+	public String getAutor() {
+		return autor;
+	}
 
-    public void setAutor(String autor) {
-        this.autor = autor;
-    }
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
 
-    public String getEdicion() {
-        return edicion;
-    }
+	public String getEdicion() {
+		return edicion;
+	}
 
-    public void setEdicion(String edicion) {
-        this.edicion = edicion;
-    }
+	public void setEdicion(String edicion) {
+		this.edicion = edicion;
+	}
 
-    public double getPrecio() {
-        return precio;
-    }
+	public double getPrecio() {
+		return precio;
+	}
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
 
-    @Override
-    public String toString() {
-        return "Libro{" +
-                "titulo='" + titulo + '\'' +
-                ", autor='" + autor + '\'' +
-                ", edicion='" + edicion + '\'' +
-                ", precio=" + precio +
-                '}';
-    }
+	public double getPreciofinal() {
+		return preciofinal;
+	}
 
-    public abstract double calcularPrecioFinal();
+	public void setPreciofinal(double preciofinal) {
+		this.preciofinal = preciofinal;
+	}
+	
 
+   
 }
