@@ -1,71 +1,73 @@
 package modelo;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Cliente {
-    private int id;
-    private String correo, password;
-    private Credito credito;
-    private List<Compra> compraslList;
+public class Cliente implements Serializable {
 
-    public Cliente() {}
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Credito credito;
+	private int id;
+	public Cliente( int id, String correo, String contrasena ,List<Compra> compras,Credito credito) {
+		super();
+		this.credito = credito;
+		this.id = id;
+		this.correo = correo;
+		this.contrasena = contrasena;
+		this.compras = compras;
+	}
 
-    public Cliente(int id, String correo, String password, Credito credito, List<Compra> compraslList) {
-        this.id = id;
-        this.correo = correo;
-        this.password = password;
-        this.credito = credito;
-        this.compraslList = compraslList;
-    }
+	@Override
+	public String toString() {
+		return "Cliente [credito=" + credito + ", id=" + id + ", correo=" + correo + ", contrasena=" + contrasena
+				+ ", compras=" + compras + "]";
+	}
 
-    public String getCorreo() {
-        return correo;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public String getCorreo() {
+		return correo;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
 
-    public int getId() {
-        return id;
-    }
+	public String getContrasena() {
+		return contrasena;
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
+	}
 
-    public Credito getCredito() {
-        return credito;
-    }
+	private String correo;
+	private String contrasena;
+	
+	private List<Compra> compras;
 
-    public void setCredito(Credito credito) {
-        this.credito = credito;
-    }
+	public Credito getCredito() {
+		return credito;
+	}
 
-    public List<Compra> getCompraslList() {
-        return compraslList;
-    }
+	public void setCredito(Credito credito) {
+		this.credito = credito;
+	}
 
-    public void setCompraslList(List<Compra> compraslList) {
-        this.compraslList = compraslList;
-    }
+	public List<Compra> getCompras() {
+		return compras;
+	}
 
-    @Override
-    public String toString() {
-        return "Cliente{" +
-                "id=" + id +
-                ", correo='" + correo + '\'' +
-                ", password='" + password + '\'' +
-                ", credito=" + credito +
-                ", compraslList=" + compraslList +
-                '}';
-    }
+	public void setCompras(List<Compra> compras) {
+		this.compras = compras;
+	}
 }
