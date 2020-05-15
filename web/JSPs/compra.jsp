@@ -8,14 +8,14 @@
 <title>Catala</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="/Ejercicio22/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<link href="/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body id="top">
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- Top Background Image Wrapper -->
-<div class="bgded overlay light" style="background-image:url('/Ejercicio22/images/demo/backgrounds/01.png');"> 
+<div class="bgded overlay light" style="background-image:url('/images/demo/backgrounds/01.png');">
   <!-- ################################################################################################ -->
   <div class="wrapper row1">
     <header id="header" class="hoc clear"> 
@@ -25,7 +25,7 @@
       </div>
       <nav id="mainav" class="fl_right">
         <ul class="clear">
-          <li class="active"><a href="index.html">Home</a></li>
+          <li class="active"><a href="logIn.html">Home</a></li>
           <li><a class="drop" href="#">Pages</a>
             <ul>
               <li><a href="pages/gallery.html">Gallery</a></li>
@@ -48,7 +48,7 @@
               <li><a href="#">Level 2</a></li>
             </ul>
           </li>
-          <li><a href="/Ejercicio22/VisualizarCompras">Compras</a></li>
+          <li><a href="/VisualizarCompras">Compras</a></li>
           <li><a href="#">Link Text</a></li>
         </ul>
       </nav>
@@ -109,9 +109,9 @@
     <!-- ################################################################################################ -->
     <figure id="introblocks">
       <ul class="nospace group">
-        <li class="one_third first"><a href="#"><img src="/Ejercicio22/images/demo/320x240.png" alt=""></a></li>
-        <li class="one_third"><a href="#"><img src="/Ejercicio22/images/demo/320x240.png" alt=""></a></li>
-        <li class="one_third"><a href="#"><img src="/Ejercicio22/images/demo/320x240.png" alt=""></a></li>
+        <li class="one_third first"><a href="#"><img src="/images/demo/320x240.png" alt=""></a></li>
+        <li class="one_third"><a href="#"><img src="/images/demo/320x240.png" alt=""></a></li>
+        <li class="one_third"><a href="#"><img src="/images/demo/320x240.png" alt=""></a></li>
       </ul>
     </figure>
     <p class="center"><a class="btn" href="#">Per conubia nostra</a></p>
@@ -126,7 +126,7 @@
     <!-- main body -->
     <!-- ################################################################################################ -->
     <article class="group btmspace-80">
-      <div class="two_third first"><img class="borderedbox inspace-10" src="/Ejercicio22/images/libros/${libro.titulo}.jpg" alt="no hay"></div>
+      <div class="two_third first"><img class="borderedbox inspace-10" src="/images/libros/${libro.titulo}.jpg" alt="no hay"></div>
       <div class="one_third">
         <h6 class="heading"> ${libro.titulo}</h6>
         <ul class="nospace meta">
@@ -135,7 +135,7 @@
         </ul>
         <p> Autor: ${libro.autor} <br>Edicion: ${libro.edicion} <br> Precio neto: ${libro.precio} </p>
         <p class="btmspace-30">Cras eget lacinia magna nunc ut est est cras aliquam erat sem at dapibus lorem luctus sed nunc sagittis  in&hellip;</p>
-        <footer class="nospace"><a class="btn" href="/Ejercicio22/ServletRegistrarCompra?titulo=${libro.titulo}&autor=${libro.autor}&edicion=${libro.edicion}&precio=${libro.precio}&tipo=impreso">IMPRESO &raquo;</a>&nbsp&nbsp<a class="btn" href="/Ejercicio22/ServletRegistrarCompra?titulo=${libro.titulo}&autor=${libro.autor}&edicion=${libro.edicion}&precio=${libro.precio}&tipo=digital">DIGITAL &raquo;</a></footer>
+        <footer class="nospace"><a class="btn" href="/ServletRegistrarCompra?titulo=${libro.titulo}&autor=${libro.autor}&edicion=${libro.edicion}&precio=${libro.precio}&tipo=impreso">IMPRESO &raquo;</a>&nbsp&nbsp<a class="btn" href="/ServletRegistrarCompra?titulo=${libro.titulo}&autor=${libro.autor}&edicion=${libro.edicion}&precio=${libro.precio}&tipo=digital">DIGITAL &raquo;</a></footer>
       </div>
     </article>
     <!-- ################################################################################################ -->
@@ -150,7 +150,7 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper bgded overlay coloured" style="background-image:url('/Ejercicio22/images/demo/backgrounds/02.png');">
+<div class="wrapper bgded overlay coloured" style="background-image:url('/images/demo/backgrounds/02.png');">
   <article class="hoc cta clear"> 
     <!-- ################################################################################################ -->
     <h6 class="three_quarter first">Quis orci neque praesent posuere venenatis tempor</h6>

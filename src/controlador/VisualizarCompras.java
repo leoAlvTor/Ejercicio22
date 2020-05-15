@@ -37,7 +37,7 @@ public class VisualizarCompras extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		HttpSession session= request.getSession();
+		HttpSession session= request.getSession(false);
 		
 		Cliente cliente= (Cliente) session.getAttribute("cliente");
 		List<Libro> listlibros= (List<Libro>) session.getAttribute("listlibros");
@@ -47,16 +47,20 @@ public class VisualizarCompras extends HttpServlet {
 		
 		
 		compra.setLibroList(listlibros);
-		compra.totalCompra();
+		double total = compra.totalCompra();
 		compras.add(compra);
 		session.setAttribute("compra", compra);
 		//AQUI METELE EL CREDITO NUEVO
-		cliente.setCredito(new Credito());
+		Credito credito = cliente.getCredito();
+		cliente.setCredito(new Credito(credito.getSaldoActual()-total, credito.getSaldoActual()));
 		cliente.setCompras(compras);
 		System.out.println("lineeeea "+cliente.toString());
 		request.setAttribute("cliente",cliente);
-		getServletContext().getRequestDispatcher("/listarCompras/listarCompras.jsp").forward(request, response);
+		session.setAttribute("cliente", cliente);
+		getServletContext().getRequestDispatcher("/JSPs/listarCompras.jsp").forward(request, response);
 		System.out.println("Nueva Compra");
+
+
 	}
 
 	/**

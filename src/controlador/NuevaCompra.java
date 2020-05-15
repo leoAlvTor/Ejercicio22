@@ -36,7 +36,7 @@ public class NuevaCompra extends HttpServlet {
 		// TODO Auto-generated method stub
 		System.out.println("llamo akiiiii");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		HttpSession session= request.getSession();
+		HttpSession session= request.getSession(false);
 		
 		Compra compra= (Compra) request.getAttribute("compra");
 
@@ -49,7 +49,8 @@ public class NuevaCompra extends HttpServlet {
 		compra= null;
 		session.setAttribute("compra", compra);
 		System.out.println("Acaba de finalizar su compra");
-		
+
+
 		
 	}
 

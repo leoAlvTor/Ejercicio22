@@ -53,14 +53,17 @@ public class ServletIniciarSesion extends HttpServlet {
         String password = request.getParameter("password");
 
         Cliente cliente = (Cliente) session.getAttribute("cliente");
-
+        System.out.println(cliente +"<------------");
         if(cliente != null){
             System.out.println(cliente.toString());
             System.out.println(correo + "\t" + password);
-            if(cliente.getCorreo().equals(correo) && password.equals(password))
+            if(cliente.getCorreo().equals(correo) && password.equals(password)) {
+                System.out.println("redirect main");
                 redirectMain(cliente, session);
-            else
-                response.sendRedirect(request.getContextPath()+"/JSPs/registro.jsp");
+            }else{
+                System.out.println("<------------------------------------------------->");
+                response.sendRedirect(request.getContextPath() + "/JSPs/registro.jsp");
+            }
         }else{
             response.sendRedirect(request.getContextPath()+"/JSPs/registro.jsp");
         }
@@ -93,7 +96,6 @@ public class ServletIniciarSesion extends HttpServlet {
 			
 			url="/JSPs/Catalogo.jsp";
 		}catch (Exception e) {
-			// TODO: handle exception
 			System.out.println("error al redirigir");
 		}
 		getServletContext().getRequestDispatcher(url).forward(request, response);

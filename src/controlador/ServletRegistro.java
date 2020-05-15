@@ -42,22 +42,23 @@ public class ServletRegistro extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		 HttpSession session = request.getSession(true);
-	        Cliente cliente;
 
-	        String correo = request.getParameter("correo");
-	        String password = request.getParameter("password");
-	        System.out.println(correo);
-	        List<Compra>compralist= new ArrayList<Compra>();
-	        if(correo != null && password != null){
-	            cliente = new Cliente(1, correo, password, null,new Credito(100, 0));
-	            session.setAttribute("cliente", cliente);
-	            response.sendRedirect(request.getContextPath()+"/JSPs/logIn.jsp");
-	        }else{
-	            response.sendRedirect(request.getContextPath()+"/JSPs/registro.jsp");
-	        }
+		 HttpSession session = request.getSession(true);
+		 Cliente cliente;
+
+		 String correo = request.getParameter("correo");
+		 String password = request.getParameter("contrasena");
+
+		 System.out.println(correo + password);
+		 if(correo != null && password != null){
+		 	cliente = new Cliente(1, correo, password, null,new Credito(100, 0));
+		 	session.setAttribute("cliente", cliente);
+			 System.out.println("REDIRECT <________________________");
+		 	response.sendRedirect(request.getContextPath()+"/JSPs/logIn.html");
+		 }else{
+		 	System.out.println("Correo nulo!");
+		 	response.sendRedirect(request.getContextPath()+"/JSPs/registro.jsp");
+		 }
 
 	}
 
