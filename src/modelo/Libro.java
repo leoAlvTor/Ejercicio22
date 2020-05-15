@@ -4,7 +4,9 @@ public abstract class Libro {
 	
 	private String titulo, autor, edicion;
     private double precio,preciofinal;
-    
+
+    public Libro(){}
+
 	public Libro(String titulo, String autor, String edicion, double precio) {
         this.titulo = titulo;
         this.autor = autor;

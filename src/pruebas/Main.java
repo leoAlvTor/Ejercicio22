@@ -10,7 +10,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 		
-		Libro l1=new Digital();
+		Libro l1 = new Digital();
 		l1.setAutor("rjy");
 		l1.setEdicion("fasdf");
 		l1.setPrecio(4.5);

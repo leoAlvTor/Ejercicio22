@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.jasper.tagplugins.jstl.core.Out;
-
 import modelo.Cliente;
 import modelo.Compra;
 import modelo.Digital;

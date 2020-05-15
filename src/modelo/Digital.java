@@ -2,6 +2,8 @@ package modelo;
 
 public class Digital extends Libro {
 
+	public Digital(){}
+
 	public Digital(String titulo, String autor, String edicion, double precio) {
 		super(titulo, autor, edicion, precio);
 		// TODO Auto-generated constructor stub
