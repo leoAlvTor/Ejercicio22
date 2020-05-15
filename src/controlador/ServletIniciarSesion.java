@@ -7,8 +7,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import modelo.Cliente;
+import modelo.Compra;
 import modelo.Digital;
 import modelo.Impreso;
 import modelo.Libro;
@@ -50,6 +53,7 @@ public class ServletIniciarSesion extends HttpServlet {
         String password = request.getParameter("password");
 
         Cliente cliente = (Cliente) session.getAttribute("cliente");
+
         if(cliente != null){
             System.out.println(cliente.toString());
             System.out.println(correo + "\t" + password);
@@ -67,13 +71,15 @@ public class ServletIniciarSesion extends HttpServlet {
        // session.setAttribute("client", cliente);
     	String url=null;
         System.out.println("HOLA!");
+
         Libro l1= new Digital("El Senor de los Anillos","J.R.R. Tolkien","3era edicion",28.99);
 		Libro l2= new Digital("El Codigo da Vinci","Dan Brown","3era edicion",25.99);
 		Libro l3= new Digital("El Alquimista","Paulo Coelho","3era edicion",22.99);
 		Libro l4= new Impreso("El Senor de los Anillos","J.R.R. Tolkien","3era edicion",23.99);
 		Libro l5= new Impreso("El Codigo da Vinci","Dan Brown","3era edicion",22.99);
 		Libro l6= new Impreso("El Alquimista","Paulo Coelho","3era edicion",22.99);
-			
+        List<Libro> listlibros= new ArrayList<Libro>();	
+        List<Compra> listcompras = new ArrayList<Compra>();
 		try {
 			request.setAttribute("l1",l1);	
 			request.setAttribute("l2",l2);
@@ -82,7 +88,8 @@ public class ServletIniciarSesion extends HttpServlet {
 			request.setAttribute("l5",l5);
 			request.setAttribute("l6",l6);
 			request.setAttribute("cliente",cliente);
-
+	        session.setAttribute("listlibros", listlibros);
+	        session.setAttribute("listcompras", listcompras);
 			
 			url="/JSPs/Catalogo.jsp";
 		}catch (Exception e) {

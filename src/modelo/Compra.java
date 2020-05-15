@@ -1,12 +1,28 @@
 package modelo;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Compra {
+public class Compra implements Serializable{
 	
-	 private List<Libro> libroList;
+	 /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private List<Libro> libroList;
+	    private double total;
+	    
+	    
 
-	    public List<Libro> getLibroList() {
+	    public double getTotal() {
+			return total;
+		}
+
+		public void setTotal(double total) {
+			this.total = total;
+		}
+
+		public List<Libro> getLibroList() {
 	        return libroList;
 	    }
 
@@ -19,5 +35,14 @@ public class Compra {
 	        return "Compra{" +
 	                "libroList=" + libroList +
 	                '}';
+	    }
+	    
+	    public double totalCompra() {
+	    	
+	    	 
+	    	for (Libro libro : libroList) {
+				total+=libro.calcularPrecio();
+			}
+	    	return total;
 	    }
 }

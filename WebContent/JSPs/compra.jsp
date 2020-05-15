@@ -48,7 +48,7 @@
               <li><a href="#">Level 2</a></li>
             </ul>
           </li>
-          <li><a href="#">Link Text</a></li>
+          <li><a href="/Ejercicio22/VisualizarCompras">Compras</a></li>
           <li><a href="#">Link Text</a></li>
         </ul>
       </nav>
@@ -134,7 +134,7 @@
           <li><i class="fa fa-tag"></i> <a href="#">Tag Name</a></li>
         </ul>
         <p> Autor: ${libro.autor} <br>Edicion: ${libro.edicion} <br> Precio neto: ${libro.precio} </p>
-        <p class="btmspace-30">Cras eget lacinia magna nunc ut est est cras aliquam erat sem at dapibus lorem luctus sed nunc sagittis leo in&hellip;</p>
+        <p class="btmspace-30">Cras eget lacinia magna nunc ut est est cras aliquam erat sem at dapibus lorem luctus sed nunc sagittis  in&hellip;</p>
         <footer class="nospace"><a class="btn" href="/Ejercicio22/ServletRegistrarCompra?titulo=${libro.titulo}&autor=${libro.autor}&edicion=${libro.edicion}&precio=${libro.precio}&tipo=impreso">IMPRESO &raquo;</a>&nbsp&nbsp<a class="btn" href="/Ejercicio22/ServletRegistrarCompra?titulo=${libro.titulo}&autor=${libro.autor}&edicion=${libro.edicion}&precio=${libro.precio}&tipo=digital">DIGITAL &raquo;</a></footer>
       </div>
     </article>

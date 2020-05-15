@@ -1,9 +1,14 @@
 package modelo;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Cliente {
+public class Cliente implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Credito credito;
 	private int id;
 	public Cliente( int id, String correo, String contrasena ,List<Compra> compras,Credito credito) {
