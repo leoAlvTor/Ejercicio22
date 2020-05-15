@@ -37,8 +37,7 @@ public class ServletCredito extends HttpServlet {
         // Ingreso el atributo nuevamente con los datos actualizados.
         request.getSession(false).setAttribute("cliente", cliente);
 
-        System.out.println("CREDITO ACTUALIZADO");
-
+        response.sendRedirect(request.getContextPath()+"/JSPs/");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
